@@ -14,5 +14,21 @@ module.exports ={
                 callback(false);
             }
 		});
-	},
+    },
+    getAll:(callback)=>{
+        var sql= "select * from employee";
+        console.log(sql);
+        db.getResults(sql,(result)=>{
+
+            if(result.length>0)
+            {
+                callback(result);
+            }
+            else
+            {
+                callback([]);
+            }
+
+        });
+    },
 }

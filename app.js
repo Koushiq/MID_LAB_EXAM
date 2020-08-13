@@ -5,6 +5,7 @@ var bodyParser 	= require('body-parser');
 var login= require("./controller/login");
 var addemployee = require("./controller/admin/addemployee");
 var admin = require("./controller/admin/admin");
+var allemployeelist = require("./controller/admin/allemployeelist");
 
 var app = express();
 app.set('view engine', 'ejs');
@@ -18,7 +19,7 @@ app.use("/admin",admin);
 app.use("/admin/addemployee",addemployee);
 
 app.use("/login",login);
-
+app.use("/admin/allemployeelist",allemployeelist);
 
 app.get('/', function(req, res){
 	res.redirect("/login");
