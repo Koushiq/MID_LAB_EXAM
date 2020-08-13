@@ -22,5 +22,15 @@
             <td><input type="submit" value="Insert Data" name="insert"></td>
         </table>
     </form>
+
+    <% if(err.success==true){ %>
+        <script>alert("inserted succesfully");</script>
+
+   <% }else if(err.success=="invalid")   { %>
+
+    <script>alert("invalid input data try again");</script>
+
+  <% } %>
+
 </body>
 </html>
