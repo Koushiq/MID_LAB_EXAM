@@ -31,11 +31,11 @@ router.post('/', function(req, res)
 
             if(user.role=="user")
             {
-                res.redirect("/user/employee");
+                res.redirect("/employee");
             }
             else if(user.role=="admin")
             {
-                res.redirect("/admin/admin");
+                res.redirect("/admin");
             }
             else
             {
