@@ -31,4 +31,17 @@ module.exports ={
             }
 		});
 	},
+	deleteUser:(user,callback)=>{
+		var sql ="delete from alluser where username='"+user+"' ";
+		console.log(sql);
+		db.execute(sql, (status)=>{
+            if(status)
+            {
+                callback(true);
+            }
+            else{
+                callback(false);
+            }
+		});
+	}
 }

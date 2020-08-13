@@ -31,4 +31,33 @@ module.exports ={
 
         });
     },
+    getUserById:(user,callback)=>{
+        var sql= "select * from employee where empid='"+user.empid+"' ";
+        console.log(sql);
+        db.getResults(sql,(result)=>{
+
+            if(result.length>0)
+            {
+                callback(result);
+            }
+            else
+            {
+                callback([]);
+            }
+
+        });
+    },
+    deleteUserById:(user,callback)=>{
+        var sql="delete from employee where empid='"+user.empid+"' ";
+        console.log(sql);
+		db.execute(sql, (status)=>{
+            if(status)
+            {
+                callback(true);
+            }
+            else{
+                callback(false);
+            }
+		});
+    },
 }
