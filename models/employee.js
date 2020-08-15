@@ -91,4 +91,18 @@ module.exports ={
         });
         
     },
+    update:(user,callback)=>{
+        var sql = "update employee set phonenumber='"+user.phonenumber+"',gender='"+user.gender+"',designation='"+user.designation+"',propic='"+user.propic+"' where username='"+user.username+"' ";
+        console.log(sql);
+        db.execute(sql,(status)=>{
+            if(status)
+            {
+                callback(true);
+            }
+            else
+            {
+                callback(false);
+            }
+        });
+    },
 }
