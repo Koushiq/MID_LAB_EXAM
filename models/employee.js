@@ -31,6 +31,22 @@ module.exports ={
 
         });
     },
+    getUserByUsername:(user,callback)=>{
+        var sql= "select * from employee where username='"+user.username+"' ";
+        console.log(sql);
+        db.getResults(sql,(result)=>{
+
+            if(result.length>0)
+            {
+                callback(result);
+            }
+            else
+            {
+                callback([]);
+            }
+
+        });
+    },
     getUserById:(user,callback)=>{
         var sql= "select * from employee where empid='"+user.empid+"' ";
         console.log(sql);

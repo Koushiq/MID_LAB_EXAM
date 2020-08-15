@@ -9,7 +9,6 @@ var allemployeelist = require("./controller/admin/allemployeelist");
 var admindelete = require("./controller/admin/delete");
 var adminupdate = require("./controller/admin/update");
 
-
 var app = express();
 app.set('view engine', 'ejs');
 
@@ -25,6 +24,7 @@ app.use("/admin/delete",admindelete);
 app.use("/admin/allemployeelist",allemployeelist);
 app.use("/admin/update",adminupdate);
 
+app.use('/assests',express.static('assests'));
 
 app.get('/', function(req, res){
 	res.redirect("/login");

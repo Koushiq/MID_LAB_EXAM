@@ -11,9 +11,7 @@ router.get('/', function(req, res){
     {
         employeeModel.getAll((result)=>{
             res.render("admin/allemployeelist",{result});
-
         });
-        
     }
     else
     {
