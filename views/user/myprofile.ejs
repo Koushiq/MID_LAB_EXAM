@@ -7,5 +7,17 @@
 </head>
 <body>
     <a href="/employee">Back</a>
+    <a href="/logout">Logout</a>
+    <h5>Username : <%= result[0].username %></h5>
+    <h5>Phonenumber : <%= result[0].phonenumber %></h5>
+    <h5>Gender : <%= result[0].gender %></h5>
+    <h5>Designation : <%= result[0].designation %></h5>
+    <h5>Propic : </h5>
+    <% if(result[0].propic=="n/a"){ %>
+        <img style="width: 100px; height: 100px; object-fit: cover;" src="/res/nopic.jpg" alt="">
+   <% }else{ %>
+    <img style="width: 100px; height: 100px; object-fit: cover;" src="<%= result[0].propic %>" alt="">
+  <% } %>
+    
 </body>
 </html>

@@ -32,6 +32,7 @@ app.use("/employee",employee);
 app.use("/logout",logout);
 
 app.use('/assests',express.static('assests'));
+app.use('/res',express.static('res'));
 
 app.get('/', function(req, res){
 	res.redirect("/login");
