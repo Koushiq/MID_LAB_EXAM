@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Employee List</title>
+</head>
+<body>
+    <a href="/admin">Back</a>
+    <a href="/logout">Logout</a>
+     <h1>Showing all employee list</h1>
+     <table border="1px">
+         <th>username</th>
+         <th>phonenumber</th>
+         <th>gender</th>
+         <th>designation</th>
+         <th>Action</th>
+         <%for (var i=0;i<result.length;i++ ){ %>
+            <tr>
+                <td><%= result[i].username %></td>
+                <td><%= result[i].phonenumber %></td>
+                <td><%= result[i].gender %></td>
+                <td><%= result[i].designation %></td>
+                <td><a href="/admin/update/<%= result[i].empid %>">Update</a> <a href="/admin/delete/<%= result[i].empid %>">Delete</a> </td>
+            </tr>
+
+         <%}%>
+
+     </table>
+     
+</body>
+</html>

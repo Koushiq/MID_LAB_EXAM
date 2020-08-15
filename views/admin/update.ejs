@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/admin/allemployeelist">Back</a>
+    <h1>Update Employee</h1>
+    <form action="/admin/update/<%=result[0].empid%>" method="post">
+        <table border="1px">
+            <th>phonenumber</th>
+            <td><input type="number" name="phonenumber" id=""  value="<%= result[0].phonenumber %>"></td>
+            <th>gender</th>
+            <td><input type="text" name="gender" id=""  value="<%= result[0].gender %>"></td>
+            <th>designation</th>
+            <td><input type="text" name="designation" id=""  value="<%= result[0].designation %>"></td>
+            <td><input type="submit" value="Update Data" name="update"></td>
+        </table>
+    </form>
+
+
+    <%if(err==true){%>
+        <script>alert('not updated !');</script>
+    <%}%>
+</body>
+</html>

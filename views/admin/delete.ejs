@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+</head>
+<body>
+        <h1>Do you want to delete the following info</h1>
+        <h5>Username: <%= result[0].username %> </h5>
+        <h5>id: <%= result[0].empid %> </h5>
+        <h5>phonenumber: <%= result[0].phonenumber %> </h5>
+        <a href="/admin/delete/<%= result[0].empid%>/yes">yes</a>
+        <a href="/admin/allemployeelist">no</a>
+</body>
+</html>
